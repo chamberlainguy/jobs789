@@ -1,0 +1,15 @@
+<h2>Jobseeker Login</h2>
+
+<p><%= @login_msg %></p>
+
+<%= form_tag '/jobseekerlogin' do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+
+  <%= submit_tag 'Login as Jobseeker' %>
+
+<% end %>
+

@@ -1,0 +1,50 @@
+
+<!-- 	#  email      :text
+		#  name       :text
+		#  address    :text -->
+
+<% if @employer.errors.any?  %>
+  	<ol>
+    	<% @employer.errors.full_messages.each do |msg| %>
+      		<li> <%= msg %> </li>
+      	<% end %>
+	</ol>	
+<% end %>	
+
+
+<%= form_for @employer do |f| %>
+
+	<p>
+		<%= f.label :email %>
+		<%= f.email_field :email %>
+	</p>
+
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :address %>
+		<%= f.text_field :address %>
+	</p>
+
+	<p>
+    	<%= f.label :password   %>
+    	<%= f.password_field :password  %>
+    </p>
+
+    <p>
+    	<%= f.label :password_confirmation   %>
+    	<%= f.password_field :password_confirmation  %>
+	</p>
+
+	<%= f.submit %>
+
+<% end %>
+
+
+
+
+
+

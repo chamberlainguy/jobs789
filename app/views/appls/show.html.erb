@@ -1,0 +1,26 @@
+<!-- 	#  resume       :text
+		#  cover_letter :text 
+		#  create_at    :datetime -->
+
+
+
+<p>Applied on : <%= @appl.create_at %> </p>
+
+<p>Jobseeker : <%= link_to @appl.jobseeker.name, @appl.jobseeker %> </p>
+
+<p>Jobtitle : <%= link_to @appl.job.title, @appl.job %> </p>
+
+<p>Employer : <%= link_to @appl.job.employer.name, @appl.job.employer %> </p>
+
+<p>Resume : <%= @appl.resume %> </p>
+
+<p>Cover Letter : <%= @appl.cover_letter %> </p>
+
+<% if @current_jobseeker.present? %>
+	<div>
+		<%= link_to 'Delete', @appl, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+		<%= link_to 'Edit', edit_appl_path(@appl) %>
+	</div>	
+<% else %>
+	<p>Login as a Jobseeker to change these details</p>
+<% end %>

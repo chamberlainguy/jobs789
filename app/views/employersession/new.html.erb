@@ -1,0 +1,14 @@
+<h2>Employer Login</h2>
+
+<p><%= @login_msg %></p>
+
+<%= form_tag '/employerlogin' do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+
+  <%= submit_tag 'Login as Employer' %>
+
+<% end %>

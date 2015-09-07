@@ -1,0 +1,48 @@
+<!-- 	#  title        :text
+		#  location     :text
+		#  salary       :float
+		#  industry     :text
+		#  description  :text
+		#  closing_date :date
+		#  created_at   :datetime         not null
+ -->
+
+<p>Title : <%= @job.title %> </p>
+
+<p>Employer : <%= link_to @job.employer.name, @job.employer %> </p>
+
+<p>Location : <%= @job.location %> </p>
+
+<p>Salary : <%= @job.salary %> </p>
+
+<p>Industry : <%= @job.industry %> </p>
+
+<p>Description : <%= @job.description %> </p>
+
+<p>Closing Date : <%= @job.closing_date %> </p>
+
+<p>Created On : <%= @job.created_at %> </p>
+
+<p>So far <%= @job.appls.count %> applications have been lodged. </p>
+
+<% if @current_employer.present? %>
+	<div>
+		<%= link_to 'Delete', @job, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+		<%= link_to 'Edit', edit_job_path(@job) %>
+	</div>
+<% else %>
+	<p>Login as Employer to Delete/Edit Job Advertisement</p>
+<% end %>
+
+<% if @current_jobseeker.present? %>
+		<% session[:job_id] = @job.id %>
+		<%= link_to 'Apply', new_appl_path %>
+<% else %>
+	<p>Login as Jobseeker to Apply for this Job</p>
+<% end %>
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+<!-- 	#  title        :text
+		#  location     :text
+		#  salary       :float
+		#  industry     :text
+		#  description  :text
+		#  closing_date :date
+		#  created_at   :datetime         not null
+ -->
+
+ <h2>All jobs</h2>
+
+<ul>
+	<% @jobs.each do |job| %>
+		<li>
+			<ul>
+				<%= link_to(job.title + " " + job.location, job) %>
+
+			</ul>
+		</li>
+	<% end %>
+</ul>

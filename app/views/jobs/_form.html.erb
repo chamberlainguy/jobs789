@@ -1,0 +1,52 @@
+
+<!-- 	#  title        :text
+		#  location     :text
+		#  salary       :float
+		#  industry     :text
+		#  description  :text
+		#  closing_date :date
+		#  created_at   :datetime         not null
+ -->
+
+<% if @job.errors.any?  %>
+  	<ol>
+    	<% @job.errors.full_messages.each do |msg| %>
+      		<li> <%= msg %> </li>
+		<% end %>
+	</ol>	
+<% end %>
+
+<%= form_for @job do |f| %>
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.label :location %>
+		<%= f.text_field :location %>
+	</p>
+
+	<p>
+		<%= f.label :salary %>
+		<%= f.number_field :salary %>
+	</p>
+
+	<p>
+		<%= f.label :industry %>
+		<%= f.text_field :industry %>
+	</p>
+
+	<p>
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+	</p>
+
+	<p>
+		<%= f.label :closing_date %>
+		<%= f.date_field :closing_date %>
+	</p>
+
+	<%= f.submit %>
+
+<% end %>

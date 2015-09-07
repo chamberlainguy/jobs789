@@ -7,8 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+  <%= link_to 'Home', '/' %>
+
+  <% if ! @current_jobseeker.present? %>
+    <% if @current_employer.present? %>
+      <%= link_to "Edit Employer profile", edit_employer_path(@current_employer) %>
+      <%= link_to "Post a Job", new_job_path %>
+      <%= link_to "Logout #{ @current_employer.name }", employerlogin_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %>
+    <% else %>
+      <%= link_to 'Create Employer Account', new_employer_path %>
+      <%= link_to 'Employer Login', employerlogin_path %>
+    <% end %>
+  <% end %>
+
+  <% if ! @current_employer.present? %>
+    <% if @current_jobseeker.present? %>
+      <%= link_to "Edit Jobseeker profile", edit_jobseeker_path(@current_jobseeker) %>
+      <%= link_to "Logout #{ @current_jobseeker.name }", jobseekerlogin_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %>
+    <% else %>
+      <%= link_to 'Create Jobseeker Account', new_jobseeker_path %>
+      <%= link_to 'Jobseeker Login', jobseekerlogin_path %>
+    <% end %>
+  <% end %>
+</nav>
 
 <%= yield %>
-
 </body>
 </html>

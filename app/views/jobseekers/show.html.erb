@@ -1,0 +1,21 @@
+<!-- 	#  email      :text
+		#  name       :text
+		#  address    :text
+ -->
+
+
+<p>Jobseeker email : <%= @jobseeker.email %> </p>
+
+<p>Jobseeker name : <%= @jobseeker.name %> </p>
+
+<p>Jobseeker Address : <%= @jobseeker.address %> </p>
+
+<% if @current_jobseeker.present? %>
+	<div>
+		<%= link_to 'Delete', @jobseeker, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+		<%= link_to 'Edit', edit_jobseeker_path(@jobseeker) %>
+	</div>	
+<% else %>
+	<p>Login as Jobseeker to change these details</p>
+<% end %>	
+
