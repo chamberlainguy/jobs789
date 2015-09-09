@@ -4,9 +4,9 @@
  -->
 
 
-<p>Jobseeker email : <%= @jobseeker.email %> </p>
+<p>Jobseeker email   : <%= @jobseeker.email %> </p>
 
-<p>Jobseeker name : <%= @jobseeker.name %> </p>
+<p>Jobseeker name    : <%= @jobseeker.name %> </p>
 
 <p>Jobseeker Address : <%= @jobseeker.address %> </p>
 
@@ -16,6 +16,6 @@
 		<%= link_to 'Edit', edit_jobseeker_path(@jobseeker) %>
 	</div>	
 <% else %>
-	<p>Login as Jobseeker to change these details</p>
+	<p class="greysmall">Login as Jobseeker to change these details</p>
 <% end %>	
 

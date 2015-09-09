@@ -1,3 +1,14 @@
 <!-- 	#  resume       :text
 		#  cover_letter :text -->
-<h2>All Applications</h2>
+<h2>Applications for <%= @name %></h2>
+
+<ul>
+	<% @appls.each do |appl| %>
+		<li>
+			<ul>
+				<%= link_to(appl.job.title, appl) %>
+				Applied : <%= appl.created_at %>
+			</ul>
+		</li>
+	<% end %>
+</ul>

@@ -5,7 +5,8 @@ class CreateAppls < ActiveRecord::Migration
     	t.text :cover_letter
     	t.integer :job_id
     	t.integer :jobseeker_id
-      	t.timestamps null: false
+    	t.text :resume
+      t.timestamps null: false
     end
   end
 end

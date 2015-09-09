@@ -29,22 +29,22 @@
 
 	<p>
 		<%= f.label :salary %>
-		<%= f.number_field :salary %>
+		<%= f.number_field :salary, :value => (number_with_precision(f.object.salary, :precision => 2) || 0)  %>
 	</p>
 
 	<p>
 		<%= f.label :industry %>
 		<%= f.text_field :industry %>
 	</p>
-
-	<p>
-		<%= f.label :description %>
-		<%= f.text_field :description %>
-	</p>
-
+	
 	<p>
 		<%= f.label :closing_date %>
 		<%= f.date_field :closing_date %>
+	</p>
+
+	<p>
+		<%= f.label :description %>
+		<%= f.text_area :description, cols: "80", rows: "10"  %>
 	</p>
 
 	<%= f.submit %>

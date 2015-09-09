@@ -2,9 +2,9 @@
 		#  name       :text
 		#  address    :text -->
 
-<p>Employer email : <%= @employer.email %> </p>
+<p>Employer email   : <%= @employer.email %> </p>
 
-<p>Employer name : <%= @employer.name %> </p>
+<p>Employer name    : <%= @employer.name %> </p>
 
 <p>Employer Address : <%= @employer.address %> </p>
 
@@ -14,5 +14,5 @@
 		<%= link_to 'Edit', edit_employer_path(@employer) %>
 	</div>
 <% else %>	
-	<p>Login as Employer to change these details</p>	
+	<p class="greysmall">Login as Employer to change these details</p>	
 <% end %>

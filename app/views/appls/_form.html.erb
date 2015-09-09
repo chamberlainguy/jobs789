@@ -11,15 +11,16 @@
 <% end %>
 
 
-<%= form_for @appl do |f| %>
+<%= form_for @appl, :html => { :multipart => true } do |f| %>
+
 	<p>
 		<%= f.label :resume %>
-		<%= f.text_field :resume %>
+	    <%= f.file_field :resume %>
 	</p>
 
 	<p>
 		<%= f.label :cover_letter %>
-		<%= f.text_field :cover_letter %>
+		<%= f.text_area :cover_letter, cols: "80", rows: "10"  %>
 	</p>
 
 	<%= f.submit %>

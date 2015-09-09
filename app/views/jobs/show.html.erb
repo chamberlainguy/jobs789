@@ -13,13 +13,13 @@
 
 <p>Location : <%= @job.location %> </p>
 
-<p>Salary : <%= @job.salary %> </p>
+<p>Salary $: <%= number_with_precision(@job.salary , :precision => 2) %> </p>
 
 <p>Industry : <%= @job.industry %> </p>
 
-<p>Description : <%= @job.description %> </p>
-
 <p>Closing Date : <%= @job.closing_date %> </p>
+
+<p>Description : <%= @job.description %> </p>
 
 <p>Created On : <%= @job.created_at %> </p>
 
@@ -31,14 +31,14 @@
 		<%= link_to 'Edit', edit_job_path(@job) %>
 	</div>
 <% else %>
-	<p>Login as Employer to Delete/Edit Job Advertisement</p>
+	<p class="greysmall">Login as Employer to Delete/Edit Job Advertisement</p>
 <% end %>
 
 <% if @current_jobseeker.present? %>
 		<% session[:job_id] = @job.id %>
 		<%= link_to 'Apply', new_appl_path %>
 <% else %>
-	<p>Login as Jobseeker to Apply for this Job</p>
+	<p class="greysmall">Login as Jobseeker to Apply for this Job</p>
 <% end %>
 
 

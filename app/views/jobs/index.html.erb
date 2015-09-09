@@ -13,7 +13,8 @@
 	<% @jobs.each do |job| %>
 		<li>
 			<ul>
-				<%= link_to(job.title + " " + job.location, job) %>
+				<%= link_to(job.title, job) %>
+				<p> <%= job.location %> </p>
 
 			</ul>
 		</li>
