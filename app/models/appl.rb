@@ -12,6 +12,6 @@
 class Appl < ActiveRecord::Base
 	belongs_to :job
 	belongs_to :jobseeker
-	validates :resume, :presence => true
+	# validates :resume, :presence => true
 	validates :cover_letter, :presence => true
 end
