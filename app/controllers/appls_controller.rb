@@ -32,8 +32,8 @@ class ApplsController < ApplicationController
 		params[:appl][:job_id] = session[:job_id]
 		params[:appl][:jobseeker_id] = session[:jobseeker_id]  
 		# Convert resume to a URL via cloudinary
-		# response = Cloudinary::Uploader.upload(params[:appl][:resume], :resource_type => :raw)
-		# params[:appl][:resume] = response["url"]
+		response = Cloudinary::Uploader.upload(params[:appl][:resume], :resource_type => :raw)
+		params[:appl][:resume] = response["url"]
 		@appl = Appl.new appl_params
 		if @appl.save
 			redirect_to root_path

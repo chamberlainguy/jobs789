@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dmsp719b6
+  api_key: '134929396386287'
+  api_secret: uU432IRIDql_Sl8nWV2mgEV4gyI
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dmsp719b6
+  api_key: '134929396386287'
+  api_secret: uU432IRIDql_Sl8nWV2mgEV4gyI
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dmsp719b6
+  api_key: '134929396386287'
+  api_secret: uU432IRIDql_Sl8nWV2mgEV4gyI
+  enhance_image_tag: true
+  static_image_support: false

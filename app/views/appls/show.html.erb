@@ -3,7 +3,6 @@
 		#  create_at    :datetime -->
 
 
-
 <p>Applied on   : <%= @appl.created_at %> </p>
 
 <p>Jobseeker    : <%= link_to @appl.jobseeker.name, @appl.jobseeker %> </p>
@@ -12,7 +11,7 @@
 
 <p>Employer     : <%= link_to @appl.job.employer.name, @appl.job.employer %> </p>
 
-<p>Resume       : <%= @appl.resume %> </p>
+<p>Resume       : <%= link_to @appl.resume, @appl.resume %> </p>
 
 <p>Cover Letter : <%= @appl.cover_letter %> </p>
 
