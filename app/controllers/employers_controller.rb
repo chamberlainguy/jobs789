@@ -6,6 +6,8 @@ class EmployersController < ApplicationController
 
 	def show
 		@employer = Employer.find params[:id]
+		gon.lat = @employer.latitude
+		gon.long = @employer.longitude
 	end
 	
 	def new

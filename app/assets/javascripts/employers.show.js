@@ -6,19 +6,21 @@ $(document).ready(function() {
 		return;
 	};
 
+	console.log($('.map-canvas').length);
+
 	var mapCanvas = document.getElementsByClassName('map-canvas')[0];
 
 	var mapOptions = {
 
-		center: new google.maps.LatLng(-22.875, 151.136),
-		zoom: 12,
+		center: new google.maps.LatLng(gon.lat, gon.long),
+		zoom: 17,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
 	var map = new google.maps.Map(mapCanvas, mapOptions);
 	
 	var marker = new google.maps.Marker({
-		position: { lat: -33.875, lng: 151.136 },
+		position: { lat: gon.lat, lng: gon.long },
 		map: map
 	});
 
