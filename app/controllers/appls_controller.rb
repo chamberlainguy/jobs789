@@ -29,7 +29,6 @@ class ApplsController < ApplicationController
 		# Convert resume to a URL via cloudinary
 		response = Cloudinary::Uploader.upload(params[:appl][:resume], :resource_type => :raw)
 		params[:appl][:resume] = response["url"]
-		binding.pry
 		@appl = Appl.new appl_params
 		if @appl.save
 			redirect_to root_path
