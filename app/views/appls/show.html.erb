@@ -3,7 +3,7 @@
 		#  create_at    :datetime -->
 
 
-<p>Applied on   : <%= @appl.created_at %> </p>
+<p>Applied on   : <%= @appl.created_at.strftime("%d-%b-%Y %H:%M %p") %> </p>
 
 <p>Jobseeker    : <%= link_to @appl.jobseeker.name, @appl.jobseeker %> </p>
 

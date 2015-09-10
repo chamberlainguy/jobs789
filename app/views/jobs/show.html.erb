@@ -17,11 +17,11 @@
 
 <p>Industry : <%= @job.industry %> </p>
 
-<p>Closing Date : <%= @job.closing_date %> </p>
+<p>Closing Date : <%= @job.closing_date.strftime("%d-%b-%Y") %> </p>
 
 <p>Description : <%= @job.description %> </p>
 
-<p>Created On : <%= @job.created_at %> </p>
+<p>Created On : <%= @job.created_at.strftime("%d-%b-%Y %H:%M %p") %> </p>
 
 <p>So far <%= @job.appls.count %> applications have been lodged. </p>
 

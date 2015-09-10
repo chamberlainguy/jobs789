@@ -3,12 +3,7 @@ class ApplsController < ApplicationController
 	def index
 		if @current_employer.present?
 			e = Employer.find @current_employer
-			jobs = e.jobs
-			j = Job.new
-			@appls = j.appls
-			jobs.each do |job|
-				@appls << job.appls
-			end
+			@appls = e.appls
 			@name = e.name
 		elsif @current_jobseeker.present?
 			js = Jobseeker.find @current_jobseeker
@@ -34,6 +29,7 @@ class ApplsController < ApplicationController
 		# Convert resume to a URL via cloudinary
 		response = Cloudinary::Uploader.upload(params[:appl][:resume], :resource_type => :raw)
 		params[:appl][:resume] = response["url"]
+		binding.pry
 		@appl = Appl.new appl_params
 		if @appl.save
 			redirect_to root_path
@@ -53,7 +49,10 @@ class ApplsController < ApplicationController
 	end
 
 	def update
-		@appl = Appl.find params[:id]
+		@appl = Appl.find params[:id] 
+		# Convert resume to a URL via cloudinary
+		response = Cloudinary::Uploader.upload(params[:appl][:resume], :resource_type => :raw)
+		params[:appl][:resume] = response["url"]
 		if @appl.update appl_params
 			redirect_to root_path
 		else

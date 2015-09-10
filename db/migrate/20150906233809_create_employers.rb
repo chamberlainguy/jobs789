@@ -4,6 +4,8 @@ class CreateEmployers < ActiveRecord::Migration
     	t.text :email
     	t.text :name
     	t.text :address
+    	t.float :latitude
+    	t.float :longitude
     	t.text :password_digest
       	t.timestamps null: false
     end

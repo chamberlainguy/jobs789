@@ -22,7 +22,10 @@ js2 = Jobseeker.create :email => "andysmith@gmail.com",
 						:name => "Andy Smith",
 						:address => "23 Plesent Place\nArtarmon",
 						:password => "chicken"
-
+js3 = Jobseeker.create  :email => "spongebob@spongebob.com",
+						:name => "Sponge Bob",
+						:address => "10 Some Place\nSome place",
+						:password => "chicken"
 
   #   create_table :employers do |t|
   #   	t.text :email
@@ -34,11 +37,11 @@ js2 = Jobseeker.create :email => "andysmith@gmail.com",
 Employer.destroy_all
 e1 = Employer.create :email => "maccas@maccas.com",
 						:name => "MC Donalds",
-						:address => "100 Mac Road\nMc Town",
+						:address => "58 Homestead Rd\nOrchard Hills NSW",
 						:password => "chicken"
 e2 = Employer.create :email => "stooge@ibm.com",
 						:name => "IBM",
-						:address => "34 The Loop\nBlacktown",
+						:address => "55 York St\nSydney NSW",
 						:password => "chicken"
 
 
@@ -69,12 +72,16 @@ e2 = Employer.create :email => "stooge@ibm.com",
 
   Appl.destroy_all
   a1 = Appl.create :cover_letter => "I think I'll really fit in well"
+  a2 = Appl.create :cover_letter => "I really wanna work here"
 
   e1.jobs << j1
 
-  j1.appls << a1
+  j1.appls << a1 << a2
 
   js1.appls << a1
+
+  js2.appls << a2
+  
 
 
 

@@ -2,11 +2,14 @@
 		#  name       :text
 		#  address    :text -->
 
-<p>Employer email   : <%= @employer.email %> </p>
+<div>
+	<p>Employer email   : <%= @employer.email %> </p>
+	<p>Employer name    : <%= @employer.name %> </p>
+	<p>Employer Address : <%= @employer.address %> </p>
+</div>
 
-<p>Employer name    : <%= @employer.name %> </p>
-
-<p>Employer Address : <%= @employer.address %> </p>
+<div class="map-canvas">
+</div>
 
 <% if @current_employer.present? %>
 	<div>
@@ -16,3 +19,5 @@
 <% else %>	
 	<p class="greysmall">Login as Employer to change these details</p>	
 <% end %>
+
+

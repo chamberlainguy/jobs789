@@ -7,7 +7,7 @@
 		<li>
 			<ul>
 				<%= link_to(appl.job.title, appl) %>
-				Applied : <%= appl.created_at %>
+				Applied : <%= appl.created_at.strftime("%d-%b-%Y %H:%M %p") %>
 			</ul>
 		</li>
 	<% end %>

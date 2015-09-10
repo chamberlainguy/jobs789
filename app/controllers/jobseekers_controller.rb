@@ -27,7 +27,7 @@ class JobseekersController < ApplicationController
 	def destroy
 		js = Jobseeker.find params[:id]
 		js.destroy
-		redirect_to jobseeker_path
+		redirect_to root_path
 	end
 
 	def edit
@@ -37,7 +37,7 @@ class JobseekersController < ApplicationController
 	def update
 		@jobseeker = @current_jobseeker
 		if @jobseeker.update jobseeker_params
-			redirect_to root_path
+			redirect_to jobseeker_path
 		else
 			render :edit
 		end	

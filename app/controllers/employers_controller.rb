@@ -28,7 +28,7 @@ class EmployersController < ApplicationController
 	def destroy
 		e = Employer.find params[:id]
 		e.destroy
-		redirect_to employers_path
+		redirect_to root_path
 	end
 
 	def edit
@@ -38,7 +38,7 @@ class EmployersController < ApplicationController
 	def update
 		@employer = @current_employer
 		if @employer.update employer_params
-			redirect_to root_path
+			redirect_to employer_path
 		else
 			render :edit		
 		end

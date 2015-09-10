@@ -1,28 +1,8 @@
-== README
+== JOBS789
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is my project 1 at General Assembly. It is a Job advertisement application. The main page displays a list of jobs. Employers can create an account and log in to post jobs and see a list of applications received for those jobs. Jobseekers can log in to apply for a job they are interested in.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application whilst in construction was running at https://blooming-plains-2243.herokuapp.com/    it may or may not still be active there.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
