@@ -4,40 +4,45 @@
 		#  address    :text
  -->
 
-<% if @jobseeker.errors.any?  %>
-  	<ol>
-    	<% @jobseeker.errors.full_messages.each do |msg| %>
-      		<li> <%= msg %> </li>
-		<% end %>
-	</ol>	
-<% end %>	
+<div class="a-form">
 
-<%= form_for @jobseeker do |f| %>
-	<p>
-		<%= f.label :email %>
-		<%= f.email_field :email %>
-	</p>
+	<% if @jobseeker.errors.any?  %>
+	  	<ol>
+	    	<% @jobseeker.errors.full_messages.each do |msg| %>
+	      		<li> <%= msg %> </li>
+			<% end %>
+		</ol>	
+	<% end %>	
 
-	<p>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</p>
+	<%= form_for @jobseeker do |f| %>
+		<p>
+			<%= f.label :email %>
+			<%= f.email_field :email, :class => 'form-control' %>
+		</p>
 
-	<p>
-		<%= f.label :address %>
-		<%= f.text_area :address %>
-	</p>
+		<p>
+			<%= f.label :name %>
+			<%= f.text_field :name, :class => 'form-control' %>
+		</p>
 
-	<p>
-    	<%= f.label :password   %>
-    	<%= f.password_field :password  %>
-    </p>
+		<p>
+			<%= f.label :address %>
+			<%= f.text_area :address, :class => 'form-control' %>
+		</p>
 
-    <p>
-    	<%= f.label :password_confirmation   %>
-    	<%= f.password_field :password_confirmation  %>
-	</p>
+		<p>
+	    	<%= f.label :password   %>
+	    	<%= f.password_field :password, :class => 'form-control'  %>
+	    </p>
 
-	<%= f.submit %>
+	    <p>
+	    	<%= f.label :password_confirmation   %>
+	    	<%= f.password_field :password_confirmation, :class => 'form-control'  %>
+		</p>
 
-<% end %>
+		<%= f.submit %>
+
+	<% end %>
+
+</div>
+
